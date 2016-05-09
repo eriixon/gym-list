@@ -1,0 +1,51 @@
+<div class="col-sm-4 col-sm-offset-1" style="margin-top: 50px">
+    
+<form ng-submit="vm.addMember(member)">
+   
+  <div class="form-group">
+    <label for="inputName">Full Name</label>
+    <input ng-model='member.name' type="text" class="form-control" id="inputName" placeholder="Full Name">
+  </div>
+    
+  <div class="form-group">
+    <label for="inputEmail">Email address</label>
+    <input ng-model="member.email" type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+  </div>
+  
+ <!-- <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input ng-model="member.address" type="text" class="form-control" id="inputAddress" placeholder="Address">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputPhone">Phone number</label>
+    <input ng-model="member.phone" type="number" class="form-control" id="inputphone" placeholder="Phone number">
+  </div>
+  
+      <div class="form-group">
+    <label for="inputDate">Date of birth</label>
+    <input ng-model="member.dob" type="date" class="form-control" id="inputAddress" placeholder="Date of birth">
+  </div>
+-->
+
+  <button type="submit" class="btn btn-success">Save</button>
+  <button type="reset" class="btn btn-danger">Clean</button>
+</form>
+
+</div>
+
+<div class="col-sm-1" style="margin-top: 50px">
+    <button ng-click="stmform = !stmform" type="button"> + </button>
+</div>
+
+<div class="col-sm-4" ng-show ="stmform" style="margin-top: 50px">
+    <add-some member = 'member'></add-some>
+</div>
+
+<div class="col-sm-4 col-sm-offset-1" style="margin-top: 50px">
+  <div class="list-group">
+    <div class="list-group-item" ng-repeat="member in vm.members">{{member.name}}: {{member.email}} <span class="badge" ng-click="vm.removeMember(member)">X</span>
+    <div ng-repeat="dep in member.someone"> {{dep.name}}</div>
+    </div>
+  </div>
+</div>

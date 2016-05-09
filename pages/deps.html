@@ -1,0 +1,18 @@
+<div class="col-sm-12">
+    
+<form ng-submit="vm.addSome(someone)">
+   
+  <div class="form-group">
+    <label for="inputName">Full Name</label>
+    <input ng-model='someone.name' type="text" class="form-control" id="inputName" placeholder="Full Name">
+  </div>
+  
+ <!-- <div class="form-group">
+    <label for="inputDate">Date of birth</label>
+    <input ng-model="vm.someone.dob" type="date" class="form-control" id="inputAddress" placeholder="Date of birth">
+  </div>-->
+
+  <button type="submit" class="btn btn-success">Save</button>
+  <button type="reset" class="btn btn-danger">Clean</button>
+</form>
+</div>
